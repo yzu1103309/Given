@@ -47,19 +47,25 @@ function playV(yt_id, num){
 function refreshSrt()
 {
     currentTime = player.getCurrentTime()
-    if(currentTime < subMap[currentSub].start)
+    if(currentSub >= subMap.length){
+        $("#subArea").text("")
+    }
+    else if(currentTime < subMap[currentSub].start)
     {
         $("#subArea").text("")
     }
     else if(currentTime >= subMap[currentSub].start && currentTime <= subMap[currentSub].end)
     {
         $("#subArea").html(subMap[currentSub].text.replace('\n', '<br />'))
-        console.log(subMap[currentSub].text)
+        //console.log(subMap[currentSub].text)
     }
     else if(currentTime > subMap[currentSub].end)
     {
         currentSub += 1
-        if(currentTime < subMap[currentSub].start)
+        if(currentSub >= subMap.length){
+            $("#subArea").text("")
+        }
+        else if(currentTime < subMap[currentSub].start)
         {
             $("#subArea").text("")
         }
