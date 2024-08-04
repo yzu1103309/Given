@@ -1,0 +1,58 @@
+.oneOpt
+{
+    display: inline-block;
+    width: 21%;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #909497;
+    color: white;
+    text-align: center;
+    margin: 1% 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.onHoverT{
+    position: relative;
+    bottom: 58%;
+    text-align: center;
+    display: none;
+    color: black;
+    height: 0;
+    text-decoration: none;
+}
+.imgS:hover .onHoverT,.imgS:hover .onHoverT-2,.imgS:hover .onHoverT-3{
+    display: block;
+}
+.imgS:hover img{
+    filter: opacity(15%);
+    -webkit-filter: opacity(15%);
+}
+.onHoverT-3{
+    position: relative;
+    bottom: 78%;
+    text-align: center;
+    display: none;
+    color: black;
+    height: 0;
+    text-decoration: none;
+}
+.onHoverT-2{
+    position: relative;
+    bottom: 67%;
+    text-align: center;
+    display: none;
+    color: black;
+    height: 0;
+    text-decoration: none;
+}
+table tr td{
+    text-align: center;
+    border: 3px solid grey;
+    padding: 15px 0;
+
+}
+canvas{
+    border: 2px solid black;
+    background-image: url(../images/game/grasses68.gif);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+}
