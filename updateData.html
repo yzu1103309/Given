@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Update Data from YZU</title>
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        
+        
+        <div id="all">
+            <span>學年：</span><input type="text" id="year" style="width: 80px; margin-right: 50px;" placeholder="111"/>
+            <span>學期：</span>
+            <select id="semester" style="width: 80px; margin-right: 50px;">
+                <option disabled selected="">(請選擇)</option>
+                <option value="1">第一學期</option>
+                <option value="2">第二學期</option>
+            </select>
+            <input type="button" value="開始產生CSV檔" onclick="start()">
+            <div id="output">
+
+            </div>
+        </div>
+
+        <script>
+            var classtype = ["GN","GS","ID","LE","LS"];
+            
+            var out = "";
+            function start(){
+                var year = $("#year").val();
+                var semester = $("#semester").val();
+                console.log(year);
+                if(year==""){
+                    $("#output").html("<h1>Please input year</h1>");
+                }else if(semester==null){
+                    $("#output").html("<h1>Please select semester</h1>");
+                }else{
+                    $("#output").html("<h1>Getting Data From YZU Server, Please Wait......</h1>");
+                    $.ajax({
+                        url: `https://portalx.yzu.edu.tw/OpenData/api/Open/CosList?year=${year}&smtr=${semester}`,
+                        type: "GET",
+                        datatype: "json",
+                        success: function( data ) {
+                            for(var k = 0; k<classtype.length; k++){
+                                $.each(data,function(i,item){
+                                    var get_classtype = item.cos_id.match(classtype[k]);
+                                    var time = item.WeekandRoom;
+                                    time = time.split(',');
+                                    if(get_classtype != null){
+                                        out += item.cos_id+item.cos_class+","+item.name+","+time[0].match(/\d{3}/)+","+time[1].match(/\d{3}/)+","+item.teacher_name+"<br />";
+                                    }
+                                });
+                            }
+                            if(out == ""){
+                                $("#output").html("<h1>No Data! ! ! Please Check Your Input......</h1>");
+                            }else{
+                                $("#all").html(`<h3>${out}</h3>`);
+                            }
+                        },
+                        error : function(){
+                            alert( "Request failed." );
+                        }
+                    });
+                }
+            }
+            
+        </script>
+    </body>
+</html>

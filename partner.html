@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>隊輔抽籤配對器</title>
+        <script src="./js/jquery-2.1.4.min.js"></script>
+        <link rel="icon" href="images/favicon.png">
+        <style>
+            body{
+                text-align: center;
+            }
+            textarea{
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                border: 2px solid grey;
+                border-radius: 20px;
+                margin: 0 10px;
+                width: 250px;
+                box-shadow: 5px 5px 10px grey;
+            }
+            .btn{
+                font-size: 20px;
+                font-weight: bold;
+                background-color: #fac869;
+                border: 0px solid black;
+                border-radius: 20px;
+                cursor: pointer;
+                box-shadow: 5px 5px 10px grey;
+            }
+            .btn:hover{
+                box-shadow: 5px 5px 10px black;
+            }
+            .btn:active{
+                box-shadow: none;
+            }
+            textarea:hover{
+                box-shadow: 5px 5px 10px black;
+            }
+            table{
+                width: 520px;
+                border-collapse: collapse;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            tr{
+                border-bottom: 2px dashed grey;
+                 
+            }
+            td{
+                padding: 3px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>隊輔抽籤配對器</h1>
+        <div id="txt_boxes">
+            <textarea id="male" rows="10" placeholder="請貼入男生名單"></textarea>
+            <textarea id="female" rows="10" placeholder="請貼入女生名單"></textarea>
+        </div>
+        <input type="button" class="btn" style="margin: 20px; width: 550px; height: 40px;" value="開始慎重決定" onclick="Inter()">
+        <table style="margin: 0 auto; text-align: center;" id="result">
+            <tr><td>小隊</td><td>男隊輔</td><td>女隊輔</td></tr>
+            <tr><td>第一小隊</td><td id="1m"></td><td id="1f"></td></tr>
+            <tr><td>第二小隊</td><td id="2m"></td><td id="2f"></td></tr>
+            <tr><td>第三小隊</td><td id="3m"></td><td id="3f"></td></tr>
+            <tr><td>第四小隊</td><td id="4m"></td><td id="4f"></td></tr>
+            <tr><td>第五小隊</td><td id="5m"></td><td id="5f"></td></tr>
+            <tr><td>第六小隊</td><td id="6m"></td><td id="6f"></td></tr>
+            <tr><td>第七小隊</td><td id="7m"></td><td id="7f"></td></tr>
+            <tr><td>第八小隊</td><td id="8m"></td><td id="8f"></td></tr>
+            <tr><td>第九小隊</td><td id="9m"></td><td id="9f"></td></tr>
+            <tr><td>第十小隊</td><td id="10m"></td><td id="10f"></td></tr>
+        </table>
+    </body>
+    <script>
+        var interval = null;
+        var count = 0
+        function Inter()
+        {
+            interval = window.setInterval('start()',80);
+        }
+        function start()
+        {
+            var male = $("#male").val();
+            male = male.split('\n');
+            var female = $("#female").val();
+            female = female.split('\n');
+            var mID = ['#1m','#2m','#3m','#4m','#5m','#6m','#7m','#8m','#9m','#10m'];
+            var fID = ['#1f','#2f','#3f','#4f','#5f','#6f','#7f','#8f','#9f','#10f'];
+            
+            for(var t = 0; t < 10; t++)
+            {   
+                //console.log("before",male);
+                var m = Math.floor(Math.random() * male.length);
+                var f = Math.floor(Math.random() * female.length)
+                $(mID[t]).text(male[m]);
+                $(fID[t]).text(female[f]);
+                male.splice(m,1);
+                female.splice(f,1);
+                //console.log("after",male);
+            }
+            count++;
+            console.log(count);
+            if(count == 70)
+            {
+                count = 0;
+                clearInterval(interval);
+            }
+        }
+    </script>
+</html>

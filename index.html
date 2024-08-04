@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ギヴン期間限定配信</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/user.css" />
+		<link rel="icon" href="images/favicon.png">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.changed{
+				animation: Fade 1s;
+			}
+			@keyframes Fade {
+				0%{opacity: 0;}
+				100%{opacity: 1;}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#work" class="icon solid fa-folder"><span>Folder</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>ギヴン期間限定配信</h1>
+									<p>8/3(土)0:00〜8/9(金)23:59</p>
+									<p>TVアニメ『ギヴン』1～5話</p>
+								</header>
+								<a href="#work" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/given.jpg" alt="" />
+								</a>
+							</article>
+
+						<!-- Work -->
+							<article id="work" class="panel">
+								<header>
+									<h2>目前放映中</h2>
+								</header>
+								<p>
+									將會在頁面上輔助顯示繁體中文字幕
+								</p>
+								<section>
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small imgS">
+											<a href="#ep" class="image fit"40px onclick="changeBtn('一', 'f73lv_ZUc90', 1)"><img src="https://image.tmdb.org/t/p/original/aHel0liPL4jg1I9uQ21bkMfJyxN.jpg" alt=""></a>
+											<a class="onHoverT" href="#ep" onclick="changeBtn('一', 'f73lv_ZUc90', 1)">第一集</a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small imgS">
+											<a href="#ep" class="image fit"40px onclick="changeBtn('二', 'lWFpjs2OAyA', 2)"><img src="https://image.tmdb.org/t/p/original/Bm6jXlKpDul4ruecHkFRaEYH3P.jpg" alt=""></a>
+											<a class="onHoverT" href="#ep" onclick="changeBtn('二', 'lWFpjs2OAyA', 2)">第二集</a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small imgS">
+											<a href="#ep" class="image fit"40px onclick="changeBtn('三', 'wFS7cLi6mQ4', 3)"><img src="https://image.tmdb.org/t/p/original/y2kLLF5g3Mlbf1fyyXduGEQNwTy.jpg" alt=""></a>
+											<a class="onHoverT" href="#ep" onclick="changeBtn('三', 'wFS7cLi6mQ4', 3)">第三集</a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small imgS">
+											<a href="#ep" class="image fit"40px onclick="changeBtn('四', '17MPgrRB-Sw', 4)"><img src="https://image.tmdb.org/t/p/original/3ftQtD97a7AqgiDcgKxMileKbW1.jpg" alt=""></a>
+											<a class="onHoverT" href="#ep" onclick="changeBtn('四', '17MPgrRB-Sw', 4)">第四集</a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small imgS">
+											<a href="#ep" class="image fit"40px onclick="changeBtn('五', 'k7lBq6tv9Rc', 5)"><img src="https://image.tmdb.org/t/p/original/A06uyPV6xbKJtr97i01cFo1X8hr.jpg" alt=""></a>
+											<a class="onHoverT" href="#ep" onclick="changeBtn('五', 'k7lBq6tv9Rc', 5)">第五集</a>
+										</div>
+									</div>
+								</section>
+							</article>
+
+						<article id="ep" class="panel">
+							<header>
+								<div id="VidArea" style="width: 100%; margin: 0 auto;">
+									<div id="player" style="width: 100%; height: 100%;"></div>
+								</div>
+								<div id="btnArea" style="text-align: center; padding-top: 30px;">
+									<div>您已重新整理頁面，請回到資料夾頁面重新選擇想看的集數</div>
+								</div>
+								<div style="text-align: center; font-weight: bold; font-size: 25px; margin-top: 10px; height: 40px; color: black" id="subArea"></div>
+							</header>
+						</article>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Made by <u>@oscar_w_fish</u> with love.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/main.js"></script>
+			<script src="js/sub.js"></script>
+			<script src="js/url.js"></script>
+			<script src="https://www.youtube.com/iframe_api"></script>
+			<!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+			<script src="assets/js/webcomponents-loader.min.js"></script>
+
+			<!-- Load the element definition -->
+			<script type="module" src="assets/js/zero-md.min.js"></script>
+	</body>
+	<!-- https://hospitable-top-f1b.notion.site/1102-YZU-0b7707bc00ba4b699dedfa5b02422b57 -->
+</html>
